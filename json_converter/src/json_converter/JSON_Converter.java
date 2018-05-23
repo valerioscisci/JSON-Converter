@@ -205,13 +205,10 @@ public class JSON_Converter{
 			  {
 				XSSFRow row = sheet.createRow(i);
 				
-					// iterating c number of columns
-					//for (column : rec)
-					//{
-					//	XSSFCell cell = row.createCell(c);
-					//	cell.setCellValue("Cell "+i+" "+c);
-					//}
-				System.out.println(rec);
+				// creating a cell for each element
+					
+				sortElements(sheet, row, i, rec);
+				
 				i++;
 			  }	 
 			
@@ -882,4 +879,12 @@ public class JSON_Converter{
 		}
 	}
 	
+	public static void sortElements(XSSFSheet xls, XSSFRow row, int row_num, Object record) {
+		String rec = String.valueOf(record);
+		rec = rec.replace("{", "");
+		rec = rec.replace("}", "");
+		XSSFCell cell = row.createCell(row_num);
+		cell.setCellValue(rec);
+		xls.autoSizeColumn(row_num);
+	}
 }
