@@ -879,12 +879,41 @@ public class JSON_Converter{
 		}
 	}
 	
+	/* Method that separates the json key/value pair and writes the value in the right column within the xlsx file */
+	
 	public static void sortElements(XSSFSheet xls, XSSFRow row, int row_num, Object record) {
+		String jsonKey, jsonValue;
+		String[] parts;
 		String rec = String.valueOf(record);
 		rec = rec.replace("{", "");
 		rec = rec.replace("}", "");
-		XSSFCell cell = row.createCell(row_num);
-		cell.setCellValue(rec);
-		xls.autoSizeColumn(row_num);
+		while(!rec.equals("")) {
+			parts = rec.split(":",2);
+			rec = parts[1];
+			jsonKey = parts[0];
+			jsonKey = jsonKey.replace("\"", "");
+			if(rec.substring(0, 1).equals("[")) {
+				rec = rec.substring(1);
+				parts = rec.split("]", 2);
+				rec = parts[1];
+				try {
+					rec = rec.substring(1);
+				} catch (Exception e) {
+					rec = "";
+				}
+				jsonValue = parts[0];
+			} else {
+				rec = rec.substring(1);
+				parts = rec.split("\"", 2);
+				rec = parts[1];
+				try {
+					rec = rec.substring(1);
+				} catch (Exception e) {
+					rec = "";
+				}
+				jsonValue = parts[0];
+				jsonValue = jsonValue.replace("\"", "");
+			}
+		}
 	}
 }
