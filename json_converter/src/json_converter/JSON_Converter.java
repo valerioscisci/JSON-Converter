@@ -897,12 +897,6 @@ public class JSON_Converter{
 					rec = "";
 				}
 				jsonValue = parts[0];
-				if (jsonKey.equals("HappendAt")) {
-					jsonValue = jsonValue.substring(7, 21);
-					java.util.Date subTime = new java.util.Date(Long.parseLong(jsonValue) * 1000);
-					DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-					jsonValue = df.format(subTime);
-				}
 			} else {
 				rec = rec.substring(1);
 				parts = rec.split("\"", 2);
@@ -914,6 +908,13 @@ public class JSON_Converter{
 				}
 				jsonValue = parts[0];
 				jsonValue = jsonValue.replace("\"", "");
+				if (jsonKey.equals("HappendAt")) {
+					jsonValue = jsonValue.substring(7, 20);
+					java.util.Date subTime = new java.util.Date(Long.parseLong(jsonValue));
+					DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+					df.setTimeZone(java.util.TimeZone.getTimeZone("GMT+1")); 
+					jsonValue = df.format(subTime);
+				}
 			}
 			if (Arrays.asList(questions).contains(jsonKey) || Arrays.asList(question5).contains(jsonKey) || Arrays.asList(question6).contains(jsonKey) || Arrays.asList(question8).contains(jsonKey)) {
 				jsonValue = jsonValue.replace("\"", "");
