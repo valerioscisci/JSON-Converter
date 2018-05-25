@@ -197,7 +197,7 @@ public class JSON_Converter{
 			Calendar cal = Calendar.getInstance();
 	        cal.setTime(Date.from(Instant.now()));
 			String excelFileName = System.getProperty("user.home") + "/Desktop/" + String.format(
-	                "Results_Cross_Border_Cooperation_%1$tY_%1$tm_%1$td_%1$tk_%1$tS_%1$tp.xlsx", cal); //name of the excel file
+	                "%1$tY_%1$tm_%1$td_Results_Cross_Border_Cooperation.xlsx", cal); //name of the excel file
 			String sheetName = "Results"; //name of the sheet
 			
 			XSSFWorkbook wb = new XSSFWorkbook();
