@@ -6,13 +6,13 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -187,14 +187,17 @@ public class JSON_Converter{
 			
 			JSONArray survey_record = (JSONArray) jsonObj.get("Data");
 			ArrayList<String> list = new ArrayList<String>();
-			for (int i=0; i<=survey_num.length(); i++) {
+			for (int i=0; i<Integer.parseInt(survey_num); i++) {
 				list.add(survey_record.get(i).toString());
-			} 
+			}
 			
 			/* Writes the xlsx file 
 			 * - Start - */
 			
-			String excelFileName = System.getProperty("user.home") + "/Desktop/Results.xlsx"; //name of the excel file
+			Calendar cal = Calendar.getInstance();
+	        cal.setTime(Date.from(Instant.now()));
+			String excelFileName = System.getProperty("user.home") + "/Desktop/" + String.format(
+	                "Results_Cross_Border_Cooperation_%1$tY_%1$tm_%1$td_%1$tk_%1$tS_%1$tp.xlsx", cal); //name of the excel file
 			String sheetName = "Results"; //name of the sheet
 			
 			XSSFWorkbook wb = new XSSFWorkbook();
