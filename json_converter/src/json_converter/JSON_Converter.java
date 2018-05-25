@@ -4,12 +4,18 @@ import java.awt.*;
 import java.awt.event.*;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -175,7 +181,7 @@ public class JSON_Converter{
 	public static void jsonToArray(String path){
 		JSONParser parser = new JSONParser();
 		try {
-			JSONObject jsonObj = (JSONObject) parser.parse(new FileReader(path));
+			JSONObject jsonObj = (JSONObject) parser.parse(new InputStreamReader(new FileInputStream(path), "UTF-8"));
 			
 			String survey_num = String.valueOf(jsonObj.get("ResultCount"));
 			
@@ -258,9 +264,7 @@ public class JSON_Converter{
 				"l) Resource-efficiency and blue growth",
 				"m) Transport connections",
 				"n) Labour market and labour mobility",
-				"o) Fighting poverty",
-				"social inclusion and social services",
-				"emergency services",
+				"o) Fighting poverty social inclusion and social services emergency services",
 				"p) Education and students' mobility",
 				"q) Administrative capacity",
 				"r) Promotion of human rights and fundamental freedoms",
@@ -553,8 +557,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -562,8 +565,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -571,8 +573,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -580,8 +581,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -589,8 +589,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -598,8 +597,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -607,8 +605,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -616,8 +613,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -625,8 +621,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -634,8 +629,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -643,8 +637,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -652,8 +645,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -661,8 +653,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -670,8 +661,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -679,8 +669,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -688,8 +677,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -697,8 +685,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -706,8 +693,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -715,8 +701,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -724,8 +709,7 @@ public class JSON_Converter{
 				"Common research",
 				"Common strategies/action plans",
 				"Joint learning",
-				"New network",
-				"clusters or innovation platforms",
+				"New network clusters or innovation platforms",
 				"Piloting of new solutions",
 				"Adoption or transfer of technological solutions",
 				"Material investment",
@@ -887,14 +871,16 @@ public class JSON_Converter{
 	public static void sortElements(XSSFSheet xls, XSSFRow row, int row_num, Object record) {
 		String jsonKey, jsonValue;
 		String[] parts;
-		String[] questions = {"2_1","a3","b3","c3","d3","e3","f3","g3","h3","i3","l3","m3","n3","o3","p3","q3","r3","s3","t3","u3","v3",
-							  "a52","b52","c52","d52","e52","f52","g52","h52","i52","l52","m52","n52","o52","p52","q52","r52","s52","t52","u52","v52",
-							  "a6","b6","c6","d6","e6","f6","g6","h6","i6","l6","m6","n6","o6","p6","q6","r6","s6","t6","u6","v6",
-							  "a8","b8","c8","d8","e8","f8","g8","h8","i8","l8","m8","n8","o8","p8","q8","r8","s8","t8","u8","v8"};
+		String[] questions = {"2_1","a3","b3","c3","d3","e3","f3","g3","h3","i3","l3","m3","n3","o3","p3","q3","r3","s3","t3","u3","v3"};
+		String[] question5 = {"a52","b52","c52","d52","e52","f52","g52","h52","i52","l52","m52","n52","o52","p52","q52","r52","s52","t52","u52","v52"};
+		String[] question6 = {"a6","b6","c6","d6","e6","f6","g6","h6","i6","l6","m6","n6","o6","p6","q6","r6","s6","t6","u6","v6"};
+		String[] question8 = {"a8","b8","c8","d8","e8","f8","g8","h8","i8","l8","m8","n8","o8","p8","q8","r8","s8","t8","u8","v8"};
  		int col_num = 0;
 		String rec = String.valueOf(record);
 		rec = rec.replace("{", "");
 		rec = rec.replace("}", "");
+		rec = rec.replace("\\\"", "");
+		rec = rec.replace("\\n", " ");
 		Map<String, Integer> mapping = createMap();
 		while(!rec.equals("")) {
 			parts = rec.split(":",2);
@@ -911,6 +897,12 @@ public class JSON_Converter{
 					rec = "";
 				}
 				jsonValue = parts[0];
+				if (jsonKey.equals("HappendAt")) {
+					jsonValue = jsonValue.substring(7, 21);
+					java.util.Date subTime = new java.util.Date(Long.parseLong(jsonValue) * 1000);
+					DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+					jsonValue = df.format(subTime);
+				}
 			} else {
 				rec = rec.substring(1);
 				parts = rec.split("\"", 2);
@@ -923,17 +915,26 @@ public class JSON_Converter{
 				jsonValue = parts[0];
 				jsonValue = jsonValue.replace("\"", "");
 			}
-			if (Arrays.asList(questions).contains(jsonKey)) {
+			if (Arrays.asList(questions).contains(jsonKey) || Arrays.asList(question5).contains(jsonKey) || Arrays.asList(question6).contains(jsonKey) || Arrays.asList(question8).contains(jsonKey)) {
 				jsonValue = jsonValue.replace("\"", "");
 				parts = jsonValue.split(",");
 				for (String val : parts) {
 					try {
 						col_num = mapping.get(val);
+						createCell(xls, row, col_num, "X");
 						} catch (Exception e) {
-							val = val + "6";
-							col_num = mapping.get(val);
+							if (Arrays.asList(questions).contains(jsonKey) || Arrays.asList(question8).contains(jsonKey)) {
+								jsonKey = jsonKey + "7";
+								col_num = mapping.get(jsonKey);
+							} else if (Arrays.asList(question5).contains(jsonKey)){
+								jsonKey = jsonKey + "6";
+								col_num = mapping.get(jsonKey);
+							} else if (Arrays.asList(question6).contains(jsonKey)){
+								jsonKey = jsonKey + "8";
+								col_num = mapping.get(jsonKey);
+							}
+							createCell(xls, row, col_num, val);
 						}
-					createCell(xls, row, col_num, "X");
 				}
 			} else {
 				try {
@@ -946,7 +947,7 @@ public class JSON_Converter{
 		}
 	}
 	
-	/* Create a cell */
+	/* Creates a cell */
 	
 	private static void createCell(XSSFSheet x, XSSFRow r, int c, String v){
 		XSSFCell cell = r.createCell(c);
@@ -954,7 +955,7 @@ public class JSON_Converter{
 		x.autoSizeColumn(c);
 	}
 	
-	/* Create the mapping between json keys and xlsx column indexes */
+	/* Creates the mapping between json keys and xlsx column indexes */
 	
 	private static Map<String, Integer> createMap()
     {
